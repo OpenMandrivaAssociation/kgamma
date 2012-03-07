@@ -1,6 +1,6 @@
 Name: kgamma
 Summary: kgamma color profiling
-Version: 4.8.0
+Version: 4.8.1
 Release: 1
 Epoch: 2
 Group: Graphical desktop/KDE
