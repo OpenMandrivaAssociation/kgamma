@@ -1,6 +1,6 @@
 Name:		kgamma
 Summary:	kgamma color profiling
-Version:	4.10.2
+Version:	4.10.3
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
@@ -34,6 +34,9 @@ Adjust your monitor's gamma settings.
 %makeinstall_std -C build
 
 %changelog
+* Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.3-1
+- New version 4.10.3
+
 * Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.2-1
 - New version 4.10.2
 
