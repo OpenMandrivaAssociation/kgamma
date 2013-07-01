@@ -1,5 +1,5 @@
 Name:		kgamma
-Summary:	kgamma color profiling
+Summary:	Color profiling
 Version:	4.10.4
 Release:	1
 Epoch:		2
