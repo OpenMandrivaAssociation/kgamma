@@ -1,12 +1,12 @@
 Name:		kgamma
 Summary:	Color profiling
-Version:	14.12.0
+Version:	4.14.3
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://www.kde.org
-Source0:	ftp://ftp.kde.org/pub/kde/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(xxf86vm)
 Conflicts:	okular < 2:4.6.4
