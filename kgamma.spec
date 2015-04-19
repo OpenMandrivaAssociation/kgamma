@@ -1,6 +1,6 @@
 Name:		kgamma
 Summary:	Color profiling
-Version:	14.12.0
+Version:	15.04.0
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
