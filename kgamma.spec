@@ -1,35 +1,41 @@
-Name:		kgamma
-Summary:	Color profiling
-Version:	15.04.3
-Release:	3
-Epoch:		2
+Name:		kgamma5
+Summary:	Plasma 5 monitor calibration module
+Version:	5.4.1
+Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://www.kde.org
-Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs4-devel
+Source0:	http://download.kde.org/stable/plasma/%{version}/src/%{name}-%{version}.tar.xz
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5KDELibs4Support)
+BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5Gui)
+BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires:	pkgconfig(Qt5X11Extras)
+BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xxf86vm)
-Conflicts:	okular < 2:4.6.4
 
 %description
-Adjust your monitor's gamma settings.
+Plasma 5 monitor calibration module.
 
-%files
-%doc %{_kde_docdir}/HTML/*/kcontrol/%{name}
-%{_kde_bindir}/xf86gammacfg
-%{_kde_services}/%{name}.desktop
-%{_kde_appsdir}/%{name}
-%{_kde_libdir}/kde4/*_kgamma.*
+%files -f %{name}.lang
+%dir %{_kde5_datadir}/kgamma/
+%{_kde5_datadir}/kgamma/pics/*.png
+%{_kde5_services}/kgamma.desktop
+%{_qt5_plugindir}/kcm_kgamma.so
 
 #----------------------------------------------------------------------
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde4
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
+%find_lang kcmkgamma5 kgamma5 %{name}.lang
