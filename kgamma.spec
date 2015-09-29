@@ -16,6 +16,8 @@ BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5X11Extras)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xxf86vm)
+Provides:	kgamma = 15.04.4
+Obsoletes:	kgamma < 15.04.4
 
 %description
 Plasma 5 monitor calibration module.
@@ -38,4 +40,4 @@ Plasma 5 monitor calibration module.
 %install
 %ninja_install -C build
 
-%find_lang kcmkgamma5 kgamma5 %{name}.lang
+%find_lang kcmkgamma5 %{name}.lang
