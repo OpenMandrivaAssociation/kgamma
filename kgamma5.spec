@@ -23,7 +23,7 @@ Obsoletes:	kgamma < 15.04.4
 Plasma 5 monitor calibration module.
 
 %files -f kcmkgamma.lang
-%doc %{_docdir}/HTML/*/kcontrol/kgamma
+%doc %{_docdir}/HTML/*/kgamma5
 %dir %{_kde5_datadir}/kgamma
 %dir %{_kde5_datadir}/kgamma/pics
 %{_kde5_datadir}/kgamma/pics/*.png
