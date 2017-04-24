@@ -1,3 +1,5 @@
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
+
 Name:		kgamma5
 Summary:	Plasma 5 monitor calibration module
 Version:	5.9.4
@@ -5,7 +7,7 @@ Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://www.kde.org
-Source0:	http://download.kde.org/stable/plasma/%{version}/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/plasma/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5I18n)
