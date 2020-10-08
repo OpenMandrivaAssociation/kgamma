@@ -2,8 +2,8 @@
 
 Name:		kgamma5
 Summary:	Plasma 5 monitor calibration module
-Version:	5.19.90
-Release:	2
+Version:	5.20.0
+Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://www.kde.org
