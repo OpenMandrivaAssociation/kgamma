@@ -3,10 +3,10 @@
 %define gitbranch Plasma/6.0
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Name:		plasma6-kgamma
+Name:		kgamma
 Summary:	Plasma 6 monitor calibration module
 Version:	6.3.4
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}3
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		https://www.kde.org
@@ -29,32 +29,19 @@ BuildRequires:	cmake(KF6Config)
 BuildRequires:	cmake(KF6ConfigWidgets)
 BuildRequires:	cmake(KF6KCMUtils)
 BuildRequires:	gettext
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+# Renamed 2025-04-27 after 6.0
+%rename plasma6-kgamma
 
 %description
 Plasma 6 monitor calibration module.
 
-%files -f kcmkgamma.lang
+%files -f %{name}.lang
 %dir %{_datadir}/kgamma
 %dir %{_datadir}/kgamma/pics
 %{_datadir}/kgamma/pics/*.png
 %{_qtdir}/plugins/plasma/kcminit/kcm_kgamma_init.so
 %{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kgamma.so
 %{_datadir}/applications/kcm_kgamma.desktop
-
-#----------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kgamma-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
-%find_lang kcmkgamma --all-name --with-html || touch kcmkgamma.lang
