@@ -6,7 +6,7 @@
 Name:		kgamma
 Summary:	Plasma 6 monitor calibration module
 Version:	6.4.0
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		https://www.kde.org
@@ -34,6 +34,8 @@ BuildOption:	-DBUILD_QCH:BOOL=ON
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 # Renamed 2025-04-27 after 6.0
 %rename plasma6-kgamma
+# Let's get rid of 5.x cruft
+Obsoletes: kgamma5 < %{EVRD}
 
 %description
 Plasma 6 monitor calibration module.
