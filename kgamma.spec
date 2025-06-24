@@ -5,8 +5,8 @@
 
 Name:		kgamma
 Summary:	Plasma 6 monitor calibration module
-Version:	6.4.0
-Release:	%{?git:0.%{git}.}2
+Version:	6.4.1
+Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		https://www.kde.org
